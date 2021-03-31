@@ -1,13 +1,20 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
 
-var app = express();
+let app = express();
+
+// mongoose connection
+let mongoose = require("mongoose");
+let dev_db_url = process.env.DB_STRING
+mongoose.connect(dev_db_url, { useNewUrlParser: true, useUnifiedTopology: true });
+let db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connetion error: "));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
