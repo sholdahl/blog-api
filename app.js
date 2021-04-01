@@ -8,10 +8,11 @@ let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let postsRouter = require('./routes/posts');
 
+require('dotenv').config()
 
 let app = express();
 
-// mongoose connection
+// mongoose connections
 let mongoose = require("mongoose");
 let dev_db_url = process.env.DB_STRING
 mongoose.connect(dev_db_url, { useNewUrlParser: true, useUnifiedTopology: true });
