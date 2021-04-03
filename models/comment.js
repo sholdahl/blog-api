@@ -15,4 +15,4 @@ CommentSchema.virtual("dateFormatted").get(function () {
   return DateTime.fromJSDate(this.timePosted).toLocaleString(DateTime.DATE_MED);
 });
 
-module.exports = mongoose.model("Category", CommentSchema);
+module.exports = mongoose.model("Comment", CommentSchema);

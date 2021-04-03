@@ -17,4 +17,4 @@ PostSchema.virtual("dateFormatted").get(function () {
   return DateTime.fromJSDate(this.timePosted).toLocaleString(DateTime.DATE_MED);
 });
 
-module.exports = mongoose.model("Category", PostSchema);
+module.exports = mongoose.model("Post", PostSchema);

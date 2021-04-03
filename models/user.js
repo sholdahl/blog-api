@@ -9,4 +9,4 @@ let UserSchema = new Schema({
   password: { type: String, required: true, maxLength: 100 },
 });
 
-module.exports = mongoose.model("Category", UserSchema);
+module.exports = mongoose.model("User", UserSchema);
