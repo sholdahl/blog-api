@@ -4,7 +4,6 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
-let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let postsRouter = require('./routes/posts');
 
@@ -19,17 +18,12 @@ mongoose.connect(dev_db_url, { useNewUrlParser: true, useUnifiedTopology: true }
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connetion error: "));
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 
@@ -47,7 +41,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send(`<div><h1>${err.message}</h1><h2>${err.status}</h2><pre>${err.stack}</pre></div>`);
+  
 });
 
 module.exports = app;
