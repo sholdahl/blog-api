@@ -67,14 +67,14 @@ exports.user_post = [
       // check to see if the email is in use
       User.findOne({ email: req.body.email }).exec((err, foundUser) => {
         if (foundUser) {
-          res.json([
+          res.json(
             {
               value: req.body.email,
               message: "email already in use",
               param: "email",
               location: "body",
             },
-          ]);
+          );
         } else {
           // Email is not in use, so create user
           console.log("email is not being used");
@@ -134,14 +134,14 @@ exports.user_update = [
       // check to see if the email is in use
       User.findOne({ email: req.body.email }).exec((err, foundUser) => {
         if (foundUser && foundUser._id != req.params.id) {
-          res.json([
+          res.json(
             {
               value: req.body.email,
               message: "email already in use",
               param: "email",
               location: "body",
             },
-          ]);
+          );
         } else {
           // Email is not in use, so update user
           console.log("email is not being used");

@@ -9,7 +9,7 @@ let PostSchema = new Schema({
   date: { type: Date, default: Date.now },
   published: { type: Boolean, required: true },
   url: { type: String, required: true, maxLength: 100, default: this._id },
-  author: [{ type: Schema.Types.ObjectId, ref: "user", required: true }],
+  author: [{ type: Schema.Types.ObjectId, ref: "User", required: true }],
 });
 
 // Format the time posted in a way that will render nicely
