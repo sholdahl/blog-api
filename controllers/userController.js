@@ -175,7 +175,7 @@ exports.user_delete = function (req, res, next) {
     if (err) {
       return next(err);
     } else {
-      User.findByIdAndRemove(req.params.id, (err) => {
+      User.findByIdAndDelete(req.params.id, (err) => {
         if (err) {
           return next(err);
         }

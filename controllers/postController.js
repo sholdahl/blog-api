@@ -225,5 +225,22 @@ exports.post_update = [
 
 // delete a post
 exports.post_delete = function (req, res, next) {
-  res.send("delete request to delete a post");
+  Post.findById(req.params.id).exec((err, foundPost) => {
+    if (foundPost == undefined) {
+      res.status(404);
+      res.json({
+        message: "Post not found",
+      });
+    }
+    if (err) {
+      return next(err);
+    } else {
+      Post.findByIdAndDelete(req.params.id, (err) => {
+        if (err) {
+          return next(err);
+        }
+        res.json({ message: "post deleted" });
+      });
+    }
+  });
 };
