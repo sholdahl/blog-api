@@ -25,18 +25,18 @@ router.delete('/:id', post_controller.post_delete);
 /* Comments */
 
 /* GET comments */
-router.get('/:id/comments', comment_controller.comments_get);
+router.get('/:postId/comments', comment_controller.comments_get);
 
 /* POST comment */
-router.post('/:id/comments', comment_controller.comment_post);
+router.post('/:postId/comments', comment_controller.comment_post);
 
 /* GET comment */
-router.get('/:id/comments/:commentid', comment_controller.comment_get);
+router.get('/:postId/comments/:commentId', comment_controller.comment_get);
 
 /* POST to update a comment */
-router.post('/:id/comments/:commentid', comment_controller.comment_update);
+router.post('/:postId/comments/:commentId', comment_controller.comment_update);
 
 /* DELETE  a comment */
-router.delete('/:id/comments/:commentid', comment_controller.comment_delete);
+router.delete('/:postId/comments/:commentId', comment_controller.comment_delete);
 
 module.exports = router;
