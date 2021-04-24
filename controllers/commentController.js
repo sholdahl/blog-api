@@ -63,8 +63,6 @@ exports.comment_post = [
             message: "Post not found",
           });
         } else {
-          console.log("post found");
-
           // post found, so create comment
           let date = new Date().toISOString();
 
@@ -107,7 +105,7 @@ exports.comment_update = [
       res.json(errors.array());
       return;
     } else {
-      Comment.findById(String(req.body.commentId)).exec((err, comment) => {
+      Comment.findById(String(req.params.commentId)).exec((err, comment) => {
         if (err) {
           return next(err);
         }
@@ -117,7 +115,7 @@ exports.comment_update = [
             message: "Comment not found",
           });
         } else {
-          Post.findById(String(req.body.postId)).exec((err, post) => {
+          Post.findById(String(req.params.postId)).exec((err, post) => {
             if (err) {
               return next(err);
             }
