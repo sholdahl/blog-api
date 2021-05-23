@@ -17,7 +17,7 @@ let PostSchema = new Schema(
 
 // Format the time posted in a way that will render nicely
 PostSchema.virtual("dateFormatted").get(function () {
-  return DateTime.fromJSDate(this.timePosted).toLocaleString(DateTime.DATE_MED);
+  return DateTime.fromJSDate(this.date).toLocaleString(DateTime.DATE_MED);
 });
 
 module.exports = mongoose.model("Post", PostSchema);
