@@ -4,6 +4,7 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let bodyParser = require('body-parser')
+var cors = require('cors')
 
 let usersRouter = require('./routes/users');
 let postsRouter = require('./routes/posts');
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
