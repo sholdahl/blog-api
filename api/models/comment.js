@@ -3,12 +3,15 @@ const { DateTime } = require("luxon");
 
 let Schema = mongoose.Schema;
 
-let CommentSchema = new Schema({
-  comment: { type: String, required: true, maxLength: 2000 },
-  author: { type: String, required: true, maxlength: 100 },
-  date: { type: Date, default: Date.now },
-  post: [{ type: Schema.Types.ObjectId, ref: "post", required: true }],
-});
+let CommentSchema = new Schema(
+  {
+    comment: { type: String, required: true, maxLength: 2000 },
+    author: { type: String, required: true, maxlength: 100 },
+    date: { type: Date, default: Date.now },
+    post: [{ type: Schema.Types.ObjectId, ref: "post", required: true }],
+  },
+  { toJSON: { virtuals: true } }
+);
 
 // Format the time posted in a way that will render nicely
 CommentSchema.virtual("dateFormatted").get(function () {
