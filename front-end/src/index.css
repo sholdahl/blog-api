@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font: 16px "Cabin", sans-serif;
+  background: #fff;
+  color: #3c403d;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .app-container {
-padding: 0;
+  padding: 0;
 }
 
 .header-nav {
@@ -19,4 +19,34 @@ padding: 0;
 .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.hero-div {
+  width: 100%;
+  margin: auto;
+  background: hsla(167, 100%, 22%, .15);
+  color: #007057;
+  min-height: 250px;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+}
+
+.hero-title {
+  font-size: 52px;
+}
+
+.hero-subtitle {
+  font-size: 28px;
+}
+
+.blog-card-title {
+  font-weight: 700;
+}
+
+.blog-card-date-author {
+  opacity: 0.6;
+  font-size: 12px;
 }

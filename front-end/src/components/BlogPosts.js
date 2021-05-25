@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-const { DateTime } = require("luxon");
+import BlogCard from "./BlogCard";
 
 const BlogPosts = (props) => {
   const [posts, setPosts] = useState(null);
@@ -8,14 +8,12 @@ const BlogPosts = (props) => {
   const apiUrl = process.env.REACT_APP_API_URL + "posts";
 
   useEffect(() => {
-    console.log("HERE IT IS: " + apiUrl);
     fetch(apiUrl, { mode: "cors" })
       .then(function (response) {
         return response.json();
       })
       .then(function (response) {
         setPosts(response);
-        console.log(response);
       })
       .catch(function (err) {
         setError(true);
@@ -23,25 +21,38 @@ const BlogPosts = (props) => {
   }, []);
 
   if (posts == null) {
-    return (
-      <div className="container-md text-center">
-        <h3 className="p-5">loading...</h3>
-      </div>
-    );
-  } else {
-    return (
-      <div className="container-md">
+    return <h3 className="p-5 text-center">loading...</h3>;
+  }
+  return (
+    <div>
+      <div class="hero-div">
+          <div>
+            <h1 class="text-center hero-title">The Latest Blog Posts</h1>
+            <h3 class="text-center hero-subtitle">
+              
+            </h3>
+          </div>
+        </div>
+    <div className="container-md p-3">
+      <div className="row">
         {posts.map((post) => {
           return (
-            <div className="blogPostCard">
-              <h2>{post.title}</h2>
-              <p>{post.date}</p>
-            </div>
+            <BlogCard
+              key={post._id}
+              blogTitle={post.title}
+              blogAuthor={
+                post.author[0].firstName + " " + post.author[0].lastName
+              }
+              blogDate={post.dateFormatted}
+              blogText={post.content}
+            />
           );
         })}
       </div>
-    );
-  }
+    </div>
+    </div>
+
+  );
 };
 
 export default BlogPosts;
