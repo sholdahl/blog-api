@@ -5,7 +5,7 @@ import BlogPosts from "./components/BlogPosts";
 
 function App() {
   return (
-    <div className="container-fluid no-gutters app-container">
+    <div className="app-container">
       <Header/>
       <BlogPosts/>
     </div>

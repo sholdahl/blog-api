@@ -33,7 +33,7 @@ const BlogPosts = (props) => {
             </h3>
           </div>
         </div>
-    <div className="container-md p-3">
+    <div className="container-sm">
       <div className="row">
         {posts.map((post) => {
           return (

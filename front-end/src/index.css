@@ -50,3 +50,20 @@ body {
   opacity: 0.6;
   font-size: 12px;
 }
+
+.btn-blog {
+  background: #007057;
+  color: #fff;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-blog:hover{
+  opacity: 0.8;
+  color: #fff;
+  background: #007057;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-blog:focus{
+  box-shadow: 0 0 0 0.25rem rgb(0 112 87 / 50%)
+}
