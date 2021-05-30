@@ -19,6 +19,7 @@ const BlogCard = (props) => {
             <h6 className="blog-card-date-author">{blogDate} • {blogAuthor}</h6>
             <p className="blog-card-summary-text">{summaryText}</p>
             <Button text="View Blog Post" link="#"/>
+            <hr/>
         </div>
       </div>
     );
