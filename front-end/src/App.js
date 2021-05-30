@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import BlogPosts from "./components/BlogPosts";
+import BlogPost from "./components/BlogPost";
 import About from "./components/About";
+import NotFound from "./components/NotFound";
+
 
 function App() {
   return (
@@ -13,8 +16,17 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/">
+          <Route exact path="/posts">
             <BlogPosts />
+          </Route>
+          <Route path="/posts/:id" >
+            <BlogPost />
+          </Route>
+          <Route exact path="/">
+            <BlogPosts />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </div>

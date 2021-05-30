@@ -45,6 +45,7 @@ const BlogPosts = (props) => {
               }
               blogDate={post.dateFormatted}
               blogText={post.content}
+              blogId={post._id}
             />
           );
         })}

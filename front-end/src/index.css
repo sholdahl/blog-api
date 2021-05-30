@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font: 16px "Cabin", sans-serif;
+  font: 18px "Cabin", sans-serif;
   background: #fff;
   color: #3c403d;
   -webkit-font-smoothing: antialiased;
@@ -36,10 +36,12 @@ body {
 
 .hero-title {
   font-size: 52px;
+  text-transform: capitalize;
 }
 
 .hero-subtitle {
   font-size: 28px;
+  text-transform: capitalize;
 }
 
 .blog-card-title {
@@ -66,4 +68,13 @@ body {
 
 .btn-blog:focus{
   box-shadow: 0 0 0 0.25rem rgb(0 112 87 / 50%)
+}
+
+.blog-container{
+  max-width: 600px;
+  margin: auto;
+}
+
+.blog-content{
+  
 }
