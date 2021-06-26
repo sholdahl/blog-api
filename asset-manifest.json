@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/sholdahl/blog-api/tree/main/front-end/static/css/main.9e777da5.chunk.css",
+    "main.js": "/sholdahl/blog-api/tree/main/front-end/static/js/main.d4806419.chunk.js",
+    "main.js.map": "/sholdahl/blog-api/tree/main/front-end/static/js/main.d4806419.chunk.js.map",
+    "runtime-main.js": "/sholdahl/blog-api/tree/main/front-end/static/js/runtime-main.53d7723b.js",
+    "runtime-main.js.map": "/sholdahl/blog-api/tree/main/front-end/static/js/runtime-main.53d7723b.js.map",
+    "static/js/2.c338ccf8.chunk.js": "/sholdahl/blog-api/tree/main/front-end/static/js/2.c338ccf8.chunk.js",
+    "static/js/2.c338ccf8.chunk.js.map": "/sholdahl/blog-api/tree/main/front-end/static/js/2.c338ccf8.chunk.js.map",
+    "index.html": "/sholdahl/blog-api/tree/main/front-end/index.html",
+    "static/css/main.9e777da5.chunk.css.map": "/sholdahl/blog-api/tree/main/front-end/static/css/main.9e777da5.chunk.css.map",
+    "static/js/2.c338ccf8.chunk.js.LICENSE.txt": "/sholdahl/blog-api/tree/main/front-end/static/js/2.c338ccf8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53d7723b.js",
+    "static/js/2.c338ccf8.chunk.js",
+    "static/css/main.9e777da5.chunk.css",
+    "static/js/main.d4806419.chunk.js"
+  ]
+}
