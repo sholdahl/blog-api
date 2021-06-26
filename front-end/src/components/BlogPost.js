@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Comments from "./Comments";
 
 const BlogPost = (props) => {
   const [post, setPost] = useState(null);
@@ -26,10 +27,10 @@ const BlogPost = (props) => {
   }
   return (
     <div>
-      <div class="hero-div">
+      <div className="hero-div">
         <div>
-          <h1 class="text-center hero-title">{post.title}</h1>
-          <h3 class="text-center hero-subtitle">
+          <h1 className="text-center hero-title">{post.title}</h1>
+          <h3 className="text-center hero-subtitle">
             {post.author[0].firstName + " " + post.author[0].lastName} -{" "}
             {post.dateFormatted}
           </h3>
@@ -40,6 +41,7 @@ const BlogPost = (props) => {
           <div className="col">
             <p className="blog-content">{post.content}</p>
           </div>
+          <Comments postId={id} />
         </div>
       </div>
     </div>

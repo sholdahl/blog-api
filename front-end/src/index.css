@@ -75,6 +75,21 @@ body {
   margin: auto;
 }
 
-.blog-content{
-  
+.comment-card{
+  background: #dee9e6b0;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 15px;
+}
+
+.comment-text{
+  padding: 0;
+  margin: 0;
+}
+
+.comment-form{
+  border: 5px solid #dee9e6b0;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
 }
