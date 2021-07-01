@@ -29,7 +29,6 @@ const BlogPosts = (props) => {
           <div>
             <h1 class="text-center hero-title">The Latest Blog Posts</h1>
             <h3 class="text-center hero-subtitle">
-              
             </h3>
           </div>
         </div>

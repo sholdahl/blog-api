@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import CommentCard from "./CommentCard";
-import CommentForm from "./CommentForm";
 
 const Comments = (props) => {
   const [comments, setComments] = useState(null);
-  const [error, setError] = useState(false);
-  let { postId } = props;
+  const [post, setPost] = useState(null);
+  const [commentError, setCommentError] = useState(false);
+  const [postError, setPostError] = useState(false);
 
-  const apiUrl =
-    process.env.REACT_APP_API_URL + "posts/" + postId + "/comments";
+  let { id } = useParams();
+
+  const commentApiUrl =
+    process.env.REACT_APP_API_URL + "posts/" + id + "/comments";
 
   useEffect(() => {
-    fetch(apiUrl, { mode: "cors" })
+    fetch(commentApiUrl, { mode: "cors" })
       .then(function (response) {
         return response.json();
       })
@@ -19,29 +22,58 @@ const Comments = (props) => {
         setComments(response);
       })
       .catch(function (err) {
-        setError(true);
+        setCommentError(true);
       });
   }, []);
 
-  if (comments == null) {
+  const postApiUrl = process.env.REACT_APP_API_URL + "posts/" + id;
+
+  useEffect(() => {
+    fetch(postApiUrl, { mode: "cors" })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (response) {
+        setPost(response);
+      })
+      .catch(function (err) {
+        setPostError(true);
+      });
+  }, []);
+
+  if (comments == null || post == null) {
     return <h3 className="p-5 text-center">loading...</h3>;
   }
+
   return (
-    <div className="comments-section">
-      <hr />
-      {comments.map((comment) => {
-        return (
-          <CommentCard
-            key={comment._id}
-            commentAuthor={comment.author}
-            commentDate={comment.dateFormatted}
-            commentText={comment.comment}
-            postId={comment.id}
-            commentId={comment._id}
-          />
-        );
-      })}
-      <CommentForm postID={postId} />
+    <div>
+      <div className="hero-div">
+        <div>
+          <h1 className="text-center hero-title">Comments: <em>{post.title}</em></h1>
+          <h3 className="text-center hero-subtitle">
+            {post.author[0].firstName + " " + post.author[0].lastName} -{" "}
+            {post.dateFormatted}
+          </h3>
+        </div>
+      </div>
+      <div className="container blog-container">
+        <div className="row">
+          <div className="comments-section">
+            {comments.map((comment) => {
+              return (
+                <CommentCard
+                  key={comment._id}
+                  commentAuthor={comment.author}
+                  commentDate={comment.dateFormatted}
+                  commentText={comment.comment}
+                  postId={comment.id}
+                  commentId={comment._id}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

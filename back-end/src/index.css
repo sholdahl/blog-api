@@ -21,12 +21,18 @@ body {
   text-transform: uppercase;
 }
 
+.nav-link-button,
+.nav-link-button:hover {
+  color: #007057;
+  text-decoration: none;
+}
+
 .hero-div {
   width: 100%;
   margin: auto;
-  background: hsla(167, 100%, 22%, .15);
+  background: hsla(167, 100%, 22%, 0.15);
   color: #007057;
-  min-height: 250px;
+  min-height: 150px;
   display: flex;
   margin-bottom: 30px;
   justify-content: center;
@@ -59,35 +65,49 @@ body {
   transition: all 0.15s ease-in-out;
 }
 
-.btn-blog:hover{
+.btn-blog:hover,
+.btn-secondary:hover {
   opacity: 0.8;
   color: #fff;
-  background: #007057;
   transition: all 0.15s ease-in-out;
 }
 
-.btn-blog:focus{
-  box-shadow: 0 0 0 0.25rem rgb(0 112 87 / 50%)
+.btn-light{
+  transition: all 0.15s ease-in-out;
 }
 
-.blog-container{
+.btn-light:hover {
+  opacity: 0.8;
+  color: #fff;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-blog:focus {
+  box-shadow: 0 0 0 0.25rem rgb(0 112 87 / 50%);
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+.blog-container {
   max-width: 600px;
   margin: auto;
 }
 
-.comment-card{
+.comment-card {
   background: #dee9e6b0;
   border-radius: 10px;
   margin: 10px 0;
   padding: 15px;
 }
 
-.comment-text{
+.comment-text {
   padding: 0;
   margin: 0;
 }
 
-.comment-form{
+.comment-form {
   border: 5px solid #dee9e6b0;
   border-radius: 10px;
   margin: 10px 0;

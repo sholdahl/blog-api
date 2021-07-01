@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const BlogPost = (props) => {
+const Settings = (props) => {
   return (
     <div>
       <div class="hero-div">
         <div>
-          <h1 class="text-center hero-title">About</h1>
+          <h1 class="text-center hero-title">Settings</h1>
           <h3 class="text-center hero-subtitle"></h3>
         </div>
       </div>
@@ -13,10 +13,7 @@ const BlogPost = (props) => {
         <div className="row">
           <div className="col">
             <p className="blog-content">
-              Hello! My name is Sam Holdahl. I am a web developer based out of
-              Minneapolis, Minnesota. I created this blog to share my ideas and
-              record my journey. This blog was created as a part of the Odin
-              Project.
+              Under Construction
             </p>
           </div>
         </div>
@@ -25,4 +22,4 @@ const BlogPost = (props) => {
   );
 };
 
-export default BlogPost;
+export default Settings;

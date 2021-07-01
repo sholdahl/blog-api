@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Comments from "./Comments";
 
 const BlogPost = (props) => {
   const [post, setPost] = useState(null);
@@ -41,7 +40,6 @@ const BlogPost = (props) => {
           <div className="col">
             <p className="blog-content">{post.content}</p>
           </div>
-          <Comments postId={id} />
         </div>
       </div>
     </div>

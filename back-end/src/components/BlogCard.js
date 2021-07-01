@@ -3,7 +3,8 @@ import Button from "./Button";
 
 const BlogCard = (props) => {
   const { blogTitle, blogAuthor, blogDate, blogText, blogId } = props;
-  let buttonLink = "/posts/" + blogId;
+  let blogLink = "/posts/" + blogId;
+  let commentsLink = "/posts/" + blogId + "/comments";
   let summaryText = "";
 
   if (blogText > 100) {
@@ -20,7 +21,8 @@ const BlogCard = (props) => {
           {blogDate} • {blogAuthor}
         </h6>
         <p className="blog-card-summary-text">{summaryText}</p>
-        <Button text="View Blog Post" link={buttonLink} />
+        <Button text="Edit Post" assignedClasses="btn-blog btn" link={blogLink} />
+        <Button text="View Comments" assignedClasses="btn-secondary btn" link={commentsLink} />
         <hr />
       </div>
     </div>
