@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font: 18px "Cabin", sans-serif;
+  background: #fff;
+  color: #3c403d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  padding: 0;
+}
+
+.header-nav {
+  background-color: #007057;
+  padding: 8px 10px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-div {
+  width: 100%;
+  margin: auto;
+  background: hsla(167, 100%, 22%, .15);
+  color: #007057;
+  min-height: 250px;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+}
+
+.hero-title {
+  font-size: 52px;
+  text-transform: capitalize;
+}
+
+.hero-subtitle {
+  font-size: 28px;
+  text-transform: capitalize;
+}
+
+.blog-card-title {
+  font-weight: 700;
+}
+
+.blog-card-date-author {
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.btn-blog {
+  background: #007057;
+  color: #fff;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-blog:hover{
+  opacity: 0.8;
+  color: #fff;
+  background: #007057;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-blog:focus{
+  box-shadow: 0 0 0 0.25rem rgb(0 112 87 / 50%)
+}
+
+.blog-container{
+  max-width: 600px;
+  margin: auto;
+}
+
+.comment-card{
+  background: #dee9e6b0;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 15px;
+}
+
+.comment-text{
+  padding: 0;
+  margin: 0;
+}
+
+.comment-form{
+  border: 5px solid #dee9e6b0;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+}
